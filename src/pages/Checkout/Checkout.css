@@ -1,0 +1,23 @@
+.checkout{
+padding:50px 8%;
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:500px;
+margin:auto;
+}
+
+.checkout input{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.checkout button{
+padding:15px;
+background:#ff6b00;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}

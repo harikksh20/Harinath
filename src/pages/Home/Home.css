@@ -1,0 +1,479 @@
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.page-content{
+  padding-top:150px;
+}
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+  position:fixed;
+
+  width:300px;
+  height:300px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      rgba(76,175,80,.15),
+      rgba(255,107,0,.08),
+      transparent
+    );
+
+  pointer-events:none;
+
+  z-index:0;
+
+  filter:blur(50px);
+
+  transition:
+    left .15s ease,
+    top .15s ease;
+}
+
+/* =========================
+   ANNOUNCEMENT BAR
+========================= */
+
+.announcement-bar{
+  width:100%;
+
+  padding:10px;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f6d365,
+      #fda085
+    );
+
+  color:black;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  z-index:99999;
+}
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.categories{
+  padding:70px 5%;
+  background:#f8f9fb;
+}
+
+.categories h2{
+  text-align:center;
+
+  font-size:2.8rem;
+
+  font-weight:700;
+
+  margin-bottom:40px;
+
+  color:#222;
+}
+
+.category-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+}
+
+.category-card{
+  background:white;
+
+  border-radius:25px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+  transition:.4s;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.category-card:hover{
+  transform:
+    translateY(-10px)
+    rotate(1deg);
+
+  box-shadow:
+    0 20px 45px
+    rgba(123,47,247,.25);
+}
+
+.category-card img{
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+
+  transition:.4s;
+}
+
+.category-card:hover img{
+  transform:scale(1.08);
+}
+
+.category-card h3{
+  padding:18px;
+
+  text-align:center;
+
+  font-size:1.2rem;
+
+  color:#333;
+}
+
+/* =========================
+   OFFER CARDS
+========================= */
+
+.offer-banner{
+  padding:50px 5%;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:25px;
+}
+
+.offer-card{
+  background:
+    linear-gradient(
+      135deg,
+      #f6d365,
+      #fda085
+    );
+
+  color:white;
+
+  padding:35px;
+
+  border-radius:25px;
+
+  transition:.4s;
+}
+
+.offer-card:hover{
+  transform:
+    translateY(-10px)
+    scale(1.03);
+
+  box-shadow:
+    0 25px 50px
+    rgba(123,47,247,.3);
+    cursor:pointer;
+}
+
+.offer-card h2{
+  font-size:2rem;
+
+  margin-bottom:10px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  padding:80px 5%;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:30px;
+}
+
+.stat-box{
+  background:white;
+
+  padding:40px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+  transition:.4s;
+}
+
+.stat-box:hover{
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 25px 50px
+    rgba(123,47,247,.25);
+}
+
+.stat-box h2{
+  font-size:3rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6b00,
+      #7b2ff7
+    );
+
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+.stat-box p{
+  margin-top:10px;
+
+  color:#666;
+
+  font-size:18px;
+}
+
+/* =========================
+   WHY US
+========================= */
+
+.why-us{
+  padding:80px 5%;
+
+  text-align:center;
+
+  background:#f8f9fb;
+}
+
+.why-us h2{
+  font-size:2.8rem;
+
+  margin-bottom:50px;
+}
+
+.features{
+  display:flex;
+
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.feature{
+  width:250px;
+
+  padding:40px 20px;
+
+  background:white;
+
+  border-radius:25px;
+
+  cursor:pointer;
+
+  transition:.4s;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.feature:hover{
+  transform:
+    translateY(-15px)
+    scale(1.05);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6b00,
+      #7b2ff7
+    );
+
+  box-shadow:
+    0 25px 50px
+    rgba(123,47,247,.3);
+}
+
+.feature-icon{
+  font-size:3rem;
+
+  margin-bottom:20px;
+
+  transition:.4s;
+}
+
+.feature:hover .feature-icon{
+  transform:
+    scale(1.2)
+    rotate(10deg);
+}
+
+.feature h3{
+  color:#222;
+
+  transition:.4s;
+}
+
+.feature:hover h3{
+  color:white;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+  position:fixed;
+
+  bottom:25px;
+  right:25px;
+
+  width:65px;
+  height:65px;
+
+  border-radius:50%;
+
+  background:#25D366;
+
+  color:white;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  font-size:30px;
+
+  text-decoration:none;
+
+  z-index:9999;
+
+  animation:
+    whatsappFloat 2s infinite;
+
+  box-shadow:
+    0 10px 30px
+    rgba(37,211,102,.4);
+}
+
+@keyframes whatsappFloat{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
+
+/* =========================
+   COMMON
+========================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f8f9fb;
+  overflow-x:hidden;
+}
+
+.hero-slider,
+.offer-banner,
+.categories,
+.why-us,
+.stats,
+.category-section{
+  width:100%;
+  overflow:hidden;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .page-content{
+    padding-top:120px;
+  }
+
+  .categories h2,
+  .why-us h2{
+    font-size:2rem;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .category-card img{
+    height:140px;
+  }
+
+  .features{
+    flex-direction:column;
+  }
+
+  .feature{
+    width:100%;
+  }
+
+  .announcement-bar{
+    font-size:12px;
+    padding:8px;
+  }
+
+  .stat-box h2{
+    font-size:2.3rem;
+  }
+
+  .whatsapp{
+    width:55px;
+    height:55px;
+
+    font-size:25px;
+  }
+
+}

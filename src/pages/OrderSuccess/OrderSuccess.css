@@ -1,0 +1,13 @@
+.success{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.success h1{
+color:green;
+margin-bottom:20px;
+}

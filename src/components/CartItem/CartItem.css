@@ -1,0 +1,10 @@
+.basket-row-item { display: flex; align-items: center; background: var(--white); padding: 16px; border-radius: 12px; border: 1px solid #edf2f7; margin-bottom: 15px; gap: 15px; }
+.basket-item-thumbnail { width: 75px; height: 75px; object-fit: cover; border-radius: 8px; }
+.basket-item-info { flex-grow: 1; }
+.basket-item-info h4 { font-size: 1.05rem; color: var(--text-dark); margin-bottom: 4px; }
+.basket-item-unit-cost { font-weight: 700; color: var(--primary-color); font-size: 0.95rem; }
+.basket-item-qty-controls { display: flex; align-items: center; gap: 12px; background: var(--bg-light); padding: 6px 12px; border-radius: 30px; }
+.qty-control-btn { background: none; color: var(--text-dark); display: flex; align-items: center; }
+.qty-value-display { font-weight: 700; font-size: 0.95rem; min-width: 15px; text-align: center; }
+.basket-item-subtotal-panel { display: flex; align-items: center; gap: 20px; font-weight: 800; color: var(--text-dark); }
+.basket-item-delete-btn { background: none; color: #e74c3c; display: flex; align-items: center; }

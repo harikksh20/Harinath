@@ -1,0 +1,213 @@
+.product-card{
+  background: white;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+/* CARD HOVER */
+
+.product-card:hover{
+  transform:
+    translateY(-20px);
+
+  box-shadow:
+    0 25px 50px
+    rgba(51, 255, 228, 0.35);
+}
+
+/* SHINE EFFECT */
+
+.product-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,.3),
+      transparent
+    );
+
+  pointer-events:none;
+
+  transition:.7s;
+}
+
+.product-card:hover::before{
+  left:100%;
+}
+
+/* IMAGE */
+
+.product-card img{
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+
+  transition:
+    transform .4s ease;
+}
+
+.product-card:hover img{
+  transform:
+    scale(1.08);
+}
+
+/* PRODUCT NAME */
+
+.product-card h3{
+  padding:15px 15px 5px;
+
+  font-size:1.2rem;
+
+  color:#222;
+}
+
+/* PRICE */
+
+.product-card p{
+  padding:0 15px 15px;
+
+  font-weight:600;
+
+  font-size:18px;
+
+  color:#2e7d32;
+}
+
+/* PREMIUM BUTTON */
+
+.product-card .premium-btn{
+  width:85%;
+
+  margin:20px auto;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:16px 30px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f6d365,
+      #fda085
+    );
+
+  color:white;
+
+  font-size:17px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  position:relative;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 12px 30px
+    rgba(253,160,133,.3);
+
+  transition:.4s;
+}
+
+/* BUTTON SHINE */
+
+.product-card .premium-btn::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:50%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.5),
+      transparent
+    );
+
+  transform:skewX(-25deg);
+
+  transition:.7s;
+}
+
+.product-card .premium-btn:hover::before{
+  left:130%;
+}
+
+/* BUTTON HOVER */
+
+.product-card .premium-btn:hover{
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 20px 40px
+    rgba(253,160,133,.45);
+}
+
+/* BUTTON CLICK */
+
+.product-card .premium-btn:active{
+  transform:
+    scale(.96);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .product-card img{
+    height:180px;
+  }
+
+  .product-card .premium-btn{
+    width:90%;
+
+    padding:14px 20px;
+
+    font-size:15px;
+  }
+
+}

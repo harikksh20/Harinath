@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f8f9fb;
+  overflow-x:hidden;
+}
+
+#root{
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+button{
+  font-family:inherit;
+}
+/* PREMIUM BUTTON SYSTEM */
+
+.premium-btn{
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 15px 32px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6b00,
+      #7b2ff7
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: .4s;
+
+  box-shadow:
+    0 10px 30px rgba(255,107,0,.3);
+}
+
+.premium-btn::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:70%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.5),
+      transparent
+    );
+
+  transform:skewX(-25deg);
+
+  transition:.7s;
+}
+
+.premium-btn:hover::before{
+  left:130%;
+}
+
+.premium-btn:hover{
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 20px 45px
+    rgba(255,107,0,.4);
+}
+
+.premium-btn:active{
+  transform:scale(.96);
+}
