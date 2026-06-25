@@ -1,35 +1,56 @@
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css";
 
+import "./Navbar.css";
 
 function Navbar() {
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
+
   const { cart } = useContext(CartContext);
 
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  const totalItems = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  const scrollToSection = (id) => {
+
+    document
+      .getElementById(id)
+      ?.scrollIntoView({
+        behavior: "smooth",
+      });
+
+    setMenuOpen(false);
+  };
 
   return (
+
     <nav className="navbar">
 
-      <h2>PVR Supermart</h2>
+      {/* LOGO */}
 
-       <div className="menu-btn">
-        
-      </div>
+      <h2
+        className="logo"
+        onClick={() => scrollToSection("top")}
+      >
+        TVR Supermart
+      </h2>
 
+      {/* MOBILE MENU */}
 
       <div
-        className="menu-icon"
-        onClick={() =>
-          setMenuOpen(!menuOpen)
-        }
+        className="menu-btn"
+        onClick={() => setMenuOpen(!menuOpen)}
       >
-        {menuOpen ? <FaTimes /> : <FaBars />}
+        {menuOpen ? "✕" : "☰"}
       </div>
+
+      {/* NAVIGATION */}
 
       <ul
         className={
@@ -38,66 +59,65 @@ function Navbar() {
             : "nav-links"
         }
       >
-        <li>
-          <a
-            href="#top"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-            Home
-          </a>
+
+        <li
+          onClick={() =>
+            scrollToSection("top")
+          }
+        >
+          <span>🏠</span>
+          Home
         </li>
 
-        <li>
-          <a
-            href="#products"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-            Products
-          </a>
+        <li
+          onClick={() =>
+            scrollToSection("products")
+          }
+        >
+          <span>🛒</span>
+          Products
         </li>
 
-        <li>
-          <a
-            href="#offers"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-            Offers
-          </a>
+        <li
+          onClick={() =>
+            scrollToSection("offers")
+          }
+        >
+          <span>🎁</span>
+          Offers
         </li>
 
-        <li>
-          <Link
-            to="/cart"
-            onClick={() =>
-              setMenuOpen(false)
-            }
-          >
-            Cart
-          </Link>
-        </li>
+        {/* <li
+          className="mobile-cart"
+          onClick={() => {
+            navigate("/cart");
+            setMenuOpen(false);
+          }}
+        >
+          🛍 Cart
+        </li> */}
+
       </ul>
 
-      <Link to="/cart">
-        <button className="cart-btn">
+      {/* DESKTOP CART BUTTON */}
 
-          🛒
+      <button
+        className="cart-btn"
+        onClick={() =>
+          navigate("/cart")
+        }
+      >
+        🛒 Cart
 
-          {cart.length > 0 && (
-            <span>
-              {cart.length}
-            </span>
-          )}
-
-        </button>
-      </Link>
+        {totalItems > 0 && (
+          <span>
+            {totalItems}
+          </span>
+        )}
+      </button>
 
     </nav>
+
   );
 }
 

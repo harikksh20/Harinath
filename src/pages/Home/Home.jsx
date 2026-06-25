@@ -68,11 +68,11 @@ function Home() {
 
       {/* Announcement Bar */}
 
-      <div className="announcement-bar">
+      {/* <div className="announcement-bar">
         🚚 Free Delivery Above ₹499 |
         🎁 Flat 20% OFF Today |
         ⏰ Offer Ends Tonight
-      </div>
+      </div> */}
 
       {/* Navbar */}
 
