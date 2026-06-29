@@ -38,7 +38,7 @@ function Navbar() {
         className="logo"
         onClick={() => scrollToSection("top")}
       >
-        TVR Supermart
+        PVR Supermart
       </h2>
 
       {/* MOBILE MENU */}
